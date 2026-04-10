@@ -145,7 +145,7 @@ h2 {
 .social-login {
     display: flex;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .btn-social {
@@ -163,10 +163,12 @@ h2 {
 .signup-text {
     font-size: 13px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .signup-text a {
     color: #22C55E;
     font-weight: 600;
     text-decoration: none;
+    margin-top: 10px;
 }

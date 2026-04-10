@@ -11,7 +11,7 @@
     <body>
         <div class = "container">
             <div class = "logo-section">
-                <img src = "../assets/JOMRECIPE_2.png" alt = "JOMRECIPE Logo" class = "main-logo">
+                <img src = "../assets/images/JOMRECIPE_2.png" alt = "JOMRECIPE Logo" class = "main-logo">
                 <h1>JOMRECIPE</h1>
                 <p>Discover Recipes with US</p>
             </div>
@@ -52,9 +52,9 @@
                     <button class = "btn-social"><img src = "https://www.google.com/favicon.ico" width = 16>Google</button>
                 </div>
 
-                <p class = "signup-text">Don't have an account? <a href = "#">Sign Up</a></p>
+                <p class = "signup-text">Don't have an account? <a href = "../signup/signup.php">Sign Up</a></p>
             </div>
         </div>
-        <script src = "script.js"></script>
+        <script src = "login.js"></script>
     </body>
 </html>
