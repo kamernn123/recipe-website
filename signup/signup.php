@@ -18,12 +18,12 @@
                 <h2>Create Account</h2>
                 <p class = "subtitle">Join us to Explore More Recipes</p>
 
-                <form id = "signupForm">
+                <form id = "signupForm" action = "signup_process.php" method = "POST">
                     <div class = "input-group">
                         <label>Username</label>
                         <div class = "input-wrapper">
                             <i class = "far fa-user"></i>
-                            <input type = "text" placeholder = "Enter Your Username" required>
+                            <input type = "text" name = "username" placeholder = "Enter Your Username" required>
                         </div>
                     </div>
 
@@ -31,7 +31,7 @@
                         <label>Email Address</label>
                         <div class = "input-wrapper">
                             <i class = "far fa-envelope"></i>
-                            <input type = "email" placeholder = "Enter Your Email" required>
+                            <input type = "email" name = "email" placeholder = "Enter Your Email" required>
                         </div>
                     </div>
 
@@ -39,7 +39,7 @@
                         <label>Password</label>
                         <div class = "input-wrapper">
                             <i class = "fas fa-lock"></i>
-                            <input type = "password" id = "password" placeholder = "Enter Your Password" required>
+                            <input type = "password" name = "password" id = "password" placeholder = "Enter Your Password" required>
                             <i class = "far fa-eye" id = "togglePassword"></i>
                         </div>
                     </div>
@@ -48,8 +48,8 @@
                         <label>Confirm Password</label>
                         <div class = "input-wrapper">
                             <i class = "fas fa-lock"></i>
-                            <input type = "password" id = "confirmPassword" placeholder = "Confirm Your Password" required>
-                            <i class = "far fa-eye" id = "togglePassword"></i>
+                            <input type = "password" name = "confirm_password" id = "confirmPassword" placeholder = "Confirm Your Password" required>
+                            <i class = "far fa-eye" id = "toggleConfirmPassword"></i>
                         </div>
                     </div>
 
@@ -59,6 +59,7 @@
                 <p class = "signup-text">Already have an account? <a href = "../login/login.php">Login</a>
             </div>
         </div>
+        <div id = "messageBox" class = "message-box"></div>
         <script src = "signup.js"></script>
     </body>
 </html>
