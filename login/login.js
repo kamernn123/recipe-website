@@ -8,7 +8,27 @@ togglePassword.addEventListener('click', function () {
     this.classList.toggle('fa-eye-slash');
 });
 
-document.getElementById('loginForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Login Successful!');
-})
+const urlParams = new URLSearchParams(window.location.search);
+const error = urlParams.get('error');
+const success = urlParams.get('success');
+const msgBox = document.getElementById('messageBox');
+
+if(error) {
+    msgBox.textContent = decodeURIComponent(error);
+    msgBox.classList.add('message-error');
+    hideAfterDelay();
+} else if(success) {
+    msgBox.textContent = "Login Successful!";
+    msgBox.classList.add('message-success');
+    setTimeout(() => {
+        window.location.href = "../home/home.php";
+    }, 2000);
+}
+
+function hideAfterDelay() {
+    setTimeout(() => {
+        msgBox.classList.remove('message-error');
+        msgBox.classList.remove('message-success');
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }, 3000);
+}

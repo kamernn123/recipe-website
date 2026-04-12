@@ -186,7 +186,6 @@ h2 {
     visibility: hidden;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    animation: slideUp 0.5s ease;
 }
 
 .message-error {
@@ -194,6 +193,7 @@ h2 {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
+    animation: slideUp 0.5s ease;
 }
 
 .message-success {
@@ -201,6 +201,7 @@ h2 {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
+    animation: slideUp 0.5s ease;
 }
 
 @keyframes slideUp {

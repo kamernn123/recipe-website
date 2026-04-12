@@ -1,3 +1,9 @@
+<?php
+$saved_email = isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : "";
+$saved_pass = isset($_COOKIE['user_password']) ? $_COOKIE['user_password'] : "";
+$is_checked = isset($_COOKIE['user_email']) ? "checked" : "";
+?>
+
 <!DOCTYPE html>
 <html lang = "en">
     <head>
@@ -20,12 +26,12 @@
                 <h2>Welcome Back!</h2>
                 <p class = "subtitle">Sign in to access recipes</p>
 
-                <form id = "loginForm">
+                <form id = "loginForm" action = "login_process.php" method = "POST"> 
                     <div class = "input-group">
                         <label>Email Address</label>
                         <div class = "input-wrapper">
                             <i class = "far fa-envelope"></i>
-                            <input type = "email" placeholder = "Enter Your Email" required>
+                            <input type = "email" name = "email" value = "<?php echo $saved_email; ?>" placeholder = "Enter Your Email" required>
                         </div>
                     </div>
 
@@ -33,13 +39,13 @@
                         <label>Password</label>
                         <div class = "input-wrapper">
                             <i class = "fas fa-lock"></i>
-                            <input type = "password" id = "password" placeholder = "Enter Your Password" required>
+                            <input type = "password" name = "password" id = "password" value = "<?php echo $saved_pass; ?>" placeholder = "Enter Your Password" required>
                             <i class = "far fa-eye" id = "togglePassword"></i>
                         </div>
                     </div>
 
                     <div class = "form-options">
-                        <label><input type = "checkbox"> Remember Me</label>
+                        <label><input type = "checkbox" name = "remember_me" <?php echo $is_checked; ?>> Remember Me</label>
                         <a href = "#" class = "forgot-link">Forgot Password?</a>
                     </div>
 
@@ -55,6 +61,7 @@
                 <p class = "signup-text">Don't have an account? <a href = "../signup/signup.php">Sign Up</a></p>
             </div>
         </div>
+        <div id = "messageBox" class = "message-box"></div>
         <script src = "login.js"></script>
     </body>
 </html>
