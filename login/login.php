@@ -46,11 +46,34 @@ $is_checked = isset($_COOKIE['user_email']) ? "checked" : "";
 
                     <div class = "form-options">
                         <label><input type = "checkbox" name = "remember_me" <?php echo $is_checked; ?>> Remember Me</label>
-                        <a href = "#" class = "forgot-link">Forgot Password?</a>
+                        <a href = "#" class = "forgot-link" id = "forgotPassLink">Forgot Password?</a>
                     </div>
 
                     <button type = "submit" class = "btn-primary">Sign In</button>
                 </form>
+
+                <div id = "resetModal" class = "modal-overlay">
+                    <div class = "modal-content">
+                        <span class = "close-btn" id = "closeModal">&times;</span>
+                        <h2>Reset Password</h2>
+                        <p class = "modal-subtitle">Enter your email address and we'll send you a link to reset your password.</p>
+
+                        <form id = "resetForm" action = "reset_process.php" method = "POST">
+                            <div class = "input-group">
+                                <label>Email Address</label>
+                                <div class = "input-wrapper focus-border">
+                                    <i class = "far fa-envelope"></i>
+                                    <input type = "email" name = "reset_email" placeholder = "Enter Your Email" required>
+                                </div>
+                            </div>
+
+                            <div class = "modal-actions">
+                                <button type = "button" class = "btn-cancel" id = "cancelBtn">Cancel</button>
+                                <button type = "submit" class = "btn-primary reset-btn">Send Reset Link</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
                 <div class = "divider"><span>or Continue With</span></div>
 
@@ -58,7 +81,7 @@ $is_checked = isset($_COOKIE['user_email']) ? "checked" : "";
                     <button class = "btn-social"><img src = "https://www.google.com/favicon.ico" width = 16>Google</button>
                 </div>
 
-                <p class = "signup-text">Don't have an account? <a href = "../signup/signup.php">Sign Up</a></p>
+                <p class = "signup-text">Don't have an account? <a href = "../login/signup/signup.php">Sign Up</a></p>
             </div>
         </div>
         <div id = "messageBox" class = "message-box"></div>

@@ -18,7 +18,7 @@
                 <h2>Create Account</h2>
                 <p class = "subtitle">Join us to Explore More Recipes</p>
 
-                <form id = "signupForm" action = "signup_process.php" method = "POST">
+                <form id = "signupForm" action = "../login/signup/signup_process.php" method = "POST">
                     <div class = "input-group">
                         <label>Username</label>
                         <div class = "input-wrapper">
@@ -60,6 +60,6 @@
             </div>
         </div>
         <div id = "messageBox" class = "message-box"></div>
-        <script src = "signup.js"></script>
+        <script src = "../login/signup/signup.js"></script>
     </body>
 </html>

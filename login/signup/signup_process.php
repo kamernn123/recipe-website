@@ -26,14 +26,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if($error !== "") {
-        header("Location: ../signup/signup.php?error=" . urlencode($error));
+        header("Location: ../login/signup/signup.php?error=" . urlencode($error));
         exit();
     } else {
         $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$hashed_password')";
 
         if(mysqli_query($conn, $sql)) {
-            header("Location: ../signup/signup.php?success=1");
+            header("Location: ../login/signup/signup.php?success=1");
         } else {
             header("Location: signup.php?error=Database Error");
             exit();

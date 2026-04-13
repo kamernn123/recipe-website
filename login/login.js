@@ -32,3 +32,27 @@ function hideAfterDelay() {
         window.history.replaceState({}, document.title, window.location.pathname);
     }, 3000);
 }
+
+const resetModal = document.getElementById('resetModal');
+const forgotLink = document.getElementById('forgotPassLink');
+const closeBtn = document.getElementById('closeModal');
+const cancelBtn = document.getElementById('cancelBtn');
+
+forgotLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetModal.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+    resetModal.style.display = 'none';
+});
+
+cancelBtn.addEventListener('click', () => {
+    resetModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if(e.target === resetModal) {
+        resetModal.style.display = 'none';
+    }
+});
